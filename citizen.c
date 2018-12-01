@@ -47,12 +47,11 @@ void CitizenDestroy(Citizen citizen)
 Citizen CitizenCopy(Citizen source_citizen){
     if(source_citizen==NULL)return NULL;
     Citizen new_citizen=CitizenCreate();
-    String name_copy=malloc(sizeof(Name)*Stringlength(*source_citizen->name));
-    if(new_citizen==NULL||name_copy==NULL){
+    if(new_citizen==NULL){
         CitizenDestroy(new_citizen);
         return NULL;
     }
-    new_citizen->name=StringCopy(*new_citizen->name,name_copy);
+    new_citizen->name=StringCopy(*new_citizen->name);
     new_citizen->id=source_citizen->id;
     new_citizen->education_years=source_citizen->education_years;
     new_citizen->age=source_citizen->age;
