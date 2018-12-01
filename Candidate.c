@@ -35,4 +35,9 @@ Candidate CandidateCopy(Candidate source_candidate){
     new_candidate->id=source_candidate->id;
     return new_candidate;
 }
-bool CandidateCompere(Candidate candidate_new,Candidate );
+bool CandidateCompere(Candidate candidate_new,Candidate candidate_old){
+    return candidate_new->id==candidate_old->id;
+}
+Id CandidateGetId(Candidate candidate){
+    return candidate->id;
+}
