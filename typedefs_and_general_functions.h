@@ -13,10 +13,8 @@ typedef char* String;
 typedef String* Name;
 typedef void* Information;
 typedef int* EducationYears;
-typedef int* Priorty;
-typedef int*   Candidate;
-String StringCopy(String , String);
+typedef int Priorty;
+
+Name StringCopy(String);
 size_t Stringlength( String );
-//hhhhhhh
-typedef char * zbe;
 #endif //UNTITLED1_TYPEDEFS_H
