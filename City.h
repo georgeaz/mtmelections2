@@ -17,13 +17,14 @@ typedef enum CityResult_t{
     CITY_SUCCESS
 }CityResult;
 
-Id GetIdCity(City);
-Name GetNameCitty(City);
+Id CityGetId(City);
+Name CityGetName(City);
 void CityDestroy(City);
-City CreatCity();
+City CityCreate();
 City CityCopy(City);
 bool CityCompare(City ,City );
 CitizenResult CityInsertCitizen(City, Citizen);
 CitizenResult CityRemoveCitizen(City, Citizen);
+CitizenResult CityInsertCandidate()
 
 #endif //UNTITLED1_CITY_H

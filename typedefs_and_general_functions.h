@@ -17,5 +17,4 @@ typedef int Priorty;
 
 Name StringCopy(String);
 size_t Stringlength( String );
-//hii
 #endif //UNTITLED1_TYPEDEFS_H

@@ -14,10 +14,10 @@ struct City_t{
     Name name;
     Set citizens;
 };
-Id GetCityId(City city){
+Id CityGetId(City city){
     return city->id;
 }
-Name GetCtyName(City city){
+Name CityGetName(City city){
     return  city->name;
 }
 void CityDestroy(City city){
