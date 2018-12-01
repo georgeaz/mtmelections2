@@ -18,4 +18,5 @@ typedef int*   Candidate;
 String StringCopy(String , String);
 size_t Stringlength( String );
 //hhhhhhh
+typedef char * zbe;
 #endif //UNTITLED1_TYPEDEFS_H
