@@ -17,5 +17,5 @@ typedef int* Priorty;
 typedef int*   Candidate;
 String StringCopy(String , String);
 size_t Stringlength( String );
-
+//hhhhhhh
 #endif //UNTITLED1_TYPEDEFS_H
