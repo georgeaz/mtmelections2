@@ -26,4 +26,4 @@ add_executable(3011
         mtm_print.c
         mtm_print.h
         typedefs_and_general_functions.c
-        typedefs_and_general_functions.h preference.c preference.h Candidate.h Candidate.c)
+        typedefs_and_general_functions.h preference.c preference.h Candidate.h Candidate.c higogo.cpp)
