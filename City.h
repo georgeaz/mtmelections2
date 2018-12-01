@@ -25,6 +25,6 @@ City CityCopy(City);
 bool CityCompare(City ,City );
 CitizenResult CityInsertCitizen(City, Citizen);
 CitizenResult CityRemoveCitizen(City, Citizen);
-CitizenResult CityInsertCandidate()
+CitizenResult CityInsertCandidate(City,)
 
 #endif //UNTITLED1_CITY_H
