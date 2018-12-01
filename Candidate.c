@@ -35,3 +35,4 @@ Candidate CandidateCopy(Candidate source_candidate){
     new_candidate->id=source_candidate->id;
     return new_candidate;
 }
+bool CandidateCompere(Candidate candidate_new,Candidate );
