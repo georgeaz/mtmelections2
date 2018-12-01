@@ -7,6 +7,7 @@
 #include <stddef.h>
 typedef struct  City_t* City;
 typedef struct Citizen_t * Citizen;
+typedef struct Candidate_t * Candidate;
 typedef int* Id;
 typedef int* Age;
 typedef char* String;

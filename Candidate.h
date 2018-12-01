@@ -5,8 +5,24 @@
 #ifndef INC_3011_CANDIDATE_H
 #define INC_3011_CANDIDATE_H
 
+#include "typedefs_and_general_functions.h"
+#include "stdbool.h"
 
 
+typedef enum CandidateResult_t{
+  CANDIDATE_MEMORY_ERROR,
+  CANDIDATE_NULL_ARGUMENT,
+  CANDIDATE_ALREADY_EXISTS,
+  CANDIDATE_DOES_NOT_EXIST,
+  CANDIDATE_SUCCESS
+}CandidateResult;
+
+
+Candidate CandidateCreate();
+void CandidateDestroy(Candidate);
+Candidate CandidateCopy(Candidate );
+bool CandidateCompere(Candidate ,Candidate );
+Id CandidateGetId(Candidate );
 
 
 #endif //INC_3011_CANDIDATE_H
