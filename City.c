@@ -53,7 +53,7 @@ City CityCopy(City source_city){
         CityDestroy(new_city);
         return NULL;
     }
-    new_city->name=StringCopy(*new_city->name,name_copy);
+    new_city->name=StringCopy(*new_city->name);
     new_city->citizens=source_city->citizens;
     new_city->id=source_city->id;
         return new_city;
@@ -83,9 +83,6 @@ CitizenResult CityRemoveCitizen(City city, Citizen citizen){
        case SET_SUCCESS:
            return CITIZEN_SUCCESS;
        default:return CITIZEN_SUCCESS;
-
-
-
    }
 }
 bool CityCompare(City old_city,City new_city){
