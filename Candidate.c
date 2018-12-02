@@ -37,9 +37,3 @@ bool CandidateCompere(Candidate candidate_new,Candidate candidate_old){
 Id CandidateGetId(Candidate candidate){
     return candidate->id;
 }
-bool CandidateIsLegal(Candidate candidate){
-    //if(candidate==NULL){ we already checked that!
-    //    return CANDIDATE_NULL_ARGUMENT;
-  //  }
-  return candidate->id>=0;
-}
