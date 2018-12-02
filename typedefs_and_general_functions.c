@@ -3,7 +3,7 @@
 //
 #include <stdlib.h>
 #include "typedefs_and_general_functions.h"
-
+//check when u pass agruments that they are not pointers
 String StringCopy(const String source_string){
     String new_copy=(String)malloc(sizeof(String*)*Stringlength(source_string));
     if(new_copy==NULL){

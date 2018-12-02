@@ -23,6 +23,8 @@ typedef String* Name;
 typedef void* Information;
 typedef int* EducationYears;
 typedef int Priority;
+#define CANDIDATE_MINIMUM_AGE 21
+#define VOTER_MINIMUM_AGE 17
 
 
 String StringCopy(String);

@@ -76,6 +76,10 @@ void CitizenGetInformation(Citizen citizen,Information information,CitizenInform
         case CITIZEN_AGE:information = citizen->age;
     }
 }
-void CitizenRemovePreferences(Citizen){
+void CitizenCandidateToBeRemovePrefrences(Citizen citizen){
+
+}
+void CitizenRemovePrefrence(Citizen citizen, Id const id)
+{
 
 }
