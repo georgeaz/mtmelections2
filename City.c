@@ -100,7 +100,7 @@ CandidateResult CityInsertCandidate(City city,Candidate candidate){
     //    return CANDIDATE_NULL_ARGUMENT; /They dont return the same thing
     //if you want to use the "SomethingIsLegal" thing. you only use it in their function
     if(candidate==NULL)return CANDIDATE_NULL_ARGUMENT;
-    if(!CandidateIsLegal(candidate))return CANDIDATE_ILLEGAL_ID;
+    if(CandidateGetId(candidate)<0)return CANDIDATE_ILLEGAL_ID;
     SetResult add_candidate_result=setAdd(city->candidates,candidate);
     switch (add_candidate_result){
         case SET_NULL_ARGUMENT:

@@ -8,8 +8,9 @@
 
 typedef enum mtmElectionsGeneralInput_t{
     GENERAL_ID,
-    GENEREAL_AGE,
-    GENERAL_EDUCATION_YEARS
+    GENERAL_AGE,
+    GENERAL_EDUCATION_YEARS,
+    GENERAL_
 }mtmElectionsGeneralInput;
 typedef struct  City_t* City;
 typedef struct Citizen_t * Citizen;

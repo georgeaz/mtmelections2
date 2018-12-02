@@ -30,11 +30,11 @@ MtmElectionsResult mtmElectionsAddCitizen(MtmElections mtmElections,
 }
 bool mtmElectionsIsLegal(int input,mtmElectionsGeneralInput type){
     switch(type){
-        case GENEREAL_AGE:return input>0;
+        case GENERAL_ID:return input>0;
         //cases GENERAL_ID or GENERAL_EDUCATION_YEARS are handled the same way,
         //and they are the only left cases to handle! so:
         default:return input>=0;
-        case GENERAL_ID:break;
+        case :break;
         case GENERAL_EDUCATION_YEARS:break;
     }
 }
