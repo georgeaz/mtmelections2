@@ -5,5 +5,6 @@
 #include "preference.h"
 #include "typedefs_and_general_functions.h"
 struct Preference_t{
-  Preference preference;
+  Id candidate_id;
+
 };

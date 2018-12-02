@@ -66,6 +66,16 @@ CitizenResult CitizenInsertPrefrence(City city, Citizen citizen,Id candidate,Pri
 bool CitizenCompere(Citizen old_citizen,Citizen new_citizen){
     return old_citizen->id==new_citizen->id;
 }
-Information CitizenGetInformation(Citizen citizen,Information information,CitizenInformation desirable_information){
 
+void CitizenGetInformation(Citizen citizen,Information information,CitizenInformation desirable_information) {
+    //للأمانة انا غير متأكد من الدالّة!
+    switch (desirable_information) {
+        case CITIZEN_ID:information = citizen->id;
+        case CITIZEN_NAME:information = citizen->name;
+        case CITIZEN_EDUCATION_YEARS:information = citizen->education_years;
+        case CITIZEN_AGE:information = citizen->age;
     }
+}
+void CitizenRemovePreferences(Citizen){
+
+}
