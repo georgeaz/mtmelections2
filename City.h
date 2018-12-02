@@ -8,23 +8,26 @@
 
 #include "citizen.h"
 #include "libmtm/set.h"
+#include "Candidate.h"
+
 typedef enum CityResult_t{
     CITY_MEMORY_ERROR,
     CITY_NULL_ARGUMENT,
     CITY_ALREADY_EXISTS,
     CITY_NOT_SAME_CITY,//maybe we wont use this
     CITY_DOES_NOT_EXIST,
-    CITY_SUCCESS
+    CITY_SUCCESS,
+    CITY_ILLEGAL_ID
 }CityResult;
-
 Id CityGetId(City);
 Name CityGetName(City);
 void CityDestroy(City);
 City CityCreate();
 City CityCopy(City);
 bool CityCompare(City ,City );
+bool CityIsLegal(City );
 CitizenResult CityInsertCitizen(City, Citizen);
 CitizenResult CityRemoveCitizen(City, Citizen);
-CitizenResult CityInsertCandidate(City,Citizen);
+CandidateResult CityInsertCandidate(City,Candidate);
 
 #endif //UNTITLED1_CITY_H

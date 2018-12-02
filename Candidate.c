@@ -4,7 +4,7 @@
 #include "Candidate.h"
 #include "stdlib.h"
 
-typedef struct Candidate_t{
+ struct Candidate_t{
   Id id;
 };
 Candidate CandidateCreate(){
@@ -25,13 +25,9 @@ void CandidateDestroy(Candidate candidate){
 }
 
 Candidate CandidateCopy(Candidate source_candidate){
-    if(source_candidate==NULL){
-        return NULL;
-    }
-    Candidate new_candidate=CandidateCreate();
-    if(new_candidate==NULL){
-        return NULL;
-    }
+    Candidate new_candidate=(Candidate)malloc(sizeof(*new_candidate));
+    if(source_candidate==NULL)return NULL;
+    if(new_candidate==NULL)return NULL;
     new_candidate->id=source_candidate->id;
     return new_candidate;
 }
@@ -40,4 +36,10 @@ bool CandidateCompere(Candidate candidate_new,Candidate candidate_old){
 }
 Id CandidateGetId(Candidate candidate){
     return candidate->id;
+}
+bool CandidateIsLegal(Candidate candidate){
+    //if(candidate==NULL){ we already checked that!
+    //    return CANDIDATE_NULL_ARGUMENT;
+  //  }
+  return candidate->id>=0;
 }

@@ -63,10 +63,8 @@ CitizenResult CitizenInsertPrefrence(City city, Citizen citizen,Id candidate,Pri
     //switch(result
 
     }
-
-    bool CitizenCompere(Citizen old_citizen,Citizen new_citizen){
-        return old_citizen->id==new_citizen->id;
-
+bool CitizenCompere(Citizen old_citizen,Citizen new_citizen){
+    return old_citizen->id==new_citizen->id;
 }
 Information CitizenGetInformation(Citizen citizen){
 

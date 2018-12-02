@@ -13,6 +13,7 @@ struct City_t{
     Id id;
     Name name;
     Set citizens;
+    Set candidates;
 };
 Id CityGetId(City city){
     return city->id;
@@ -74,8 +75,8 @@ CitizenResult CityInsertCitizen(City city, Citizen citizen){
     }
 }
 CitizenResult CityRemoveCitizen(City city, Citizen citizen){
-    SetResult result=setRemove(city->citizens,citizen);
-   switch (result){
+    SetResult remove_result=setRemove(city->citizens,citizen);
+   switch (remove_result){
      case SET_NULL_ARGUMENT:
          return CITIZEN_NULL_ARGUMENT;
      case SET_ITEM_DOES_NOT_EXIST:
@@ -86,6 +87,30 @@ CitizenResult CityRemoveCitizen(City city, Citizen citizen){
    }
 }
 bool CityCompare(City old_city,City new_city){
-
     return old_city->id==new_city->id;
+}
+bool CityIsLegal(City city){
+    return (city->id>=0);
+   // if(city==NULL)
+     //   return CITY_NULL_ARGUMENT; you dont have to return null since u already checked that
+}
+CandidateResult CityInsertCandidate(City city,Candidate candidate){
+    //we should check here in case of memory allocation error!!!the election funct doesnot expect that o.O
+   // if(CityIsLegal(city)!=CITY_SUCCESS || CandidateIsLegal(candidate)!=CANDIDATE_SUCCESS)
+    //    return CANDIDATE_NULL_ARGUMENT; /They dont return the same thing
+    //if you want to use the "SomethingIsLegal" thing. you only use it in their function
+    if(candidate==NULL)return CANDIDATE_NULL_ARGUMENT;
+    if(!CandidateIsLegal(candidate))return CANDIDATE_ILLEGAL_ID;
+    SetResult add_candidate_result=setAdd(city->candidates,candidate);
+    switch (add_candidate_result){
+        case SET_NULL_ARGUMENT:
+            return CANDIDATE_NULL_ARGUMENT;
+        case SET_OUT_OF_MEMORY:
+            return CANDIDATE_MEMORY_ERROR;
+        case SET_ITEM_ALREADY_EXISTS:
+            return CANDIDATE_ALREADY_EXISTS;
+        default:return CANDIDATE_SUCCESS;
+    }
+
+
 }

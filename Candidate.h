@@ -14,7 +14,8 @@ typedef enum CandidateResult_t{
   CANDIDATE_NULL_ARGUMENT,
   CANDIDATE_ALREADY_EXISTS,
   CANDIDATE_DOES_NOT_EXIST,
-  CANDIDATE_SUCCESS
+  CANDIDATE_SUCCESS,
+  CANDIDATE_ILLEGAL_ID
 }CandidateResult;
 
 
@@ -23,6 +24,7 @@ void CandidateDestroy(Candidate);
 Candidate CandidateCopy(Candidate );
 bool CandidateCompere(Candidate ,Candidate );
 Id CandidateGetId(Candidate );
+bool CandidateIsLegal(Candidate );
 
 
 #endif //INC_3011_CANDIDATE_H

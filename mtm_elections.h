@@ -9,6 +9,7 @@
 #define MTM_ELECTIONS_H_
 
 #include "uniqueOrderedList/uniqueOrderedList.h"
+#include "typedefs_and_general_functions.h"
 
 typedef enum mtmElectionsResult_t{
 	MTM_ELECTIONS_MEMORY_ERROR,
@@ -72,6 +73,7 @@ UniqueOrderedList mtmElectionsPerformElections(MtmElections mtmElections, RankFu
 
 MtmElectionsResult mtmElectionsMayorOfCity(MtmElections mtmElections, int cityId, int* mayor, const char* filename);
 
+bool mtmElectionsIsLegal(int ,mtmElectionsGeneralInput );
 
 
 
