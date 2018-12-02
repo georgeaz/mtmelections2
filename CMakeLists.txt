@@ -9,7 +9,6 @@ include_directories(libmtm)
 include_directories(uniqueOrderedList)
 
 add_executable(3011
-        cmake-build-debug/Condidutes.h
         libmtm/libmtm.a
         libmtm/set.h
         uniqueOrderedList/UniqueOrderedList.c

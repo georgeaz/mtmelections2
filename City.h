@@ -19,6 +19,7 @@ typedef enum CityResult_t{
     CITY_SUCCESS,
     CITY_ILLEGAL_ID
 }CityResult;
+
 Id CityGetId(City);
 Name CityGetName(City);
 void CityDestroy(City);
@@ -29,5 +30,7 @@ bool CityIsLegal(City );
 CitizenResult CityInsertCitizen(City, Citizen);
 CitizenResult CityRemoveCitizen(City, Citizen);
 CandidateResult CityInsertCandidate(City,Candidate);
+CandidateResult CityRemoveCandidate(City,Candidate);
+bool CityGetCitizen(City,Candidate,Citizen);
 
 #endif //UNTITLED1_CITY_H
