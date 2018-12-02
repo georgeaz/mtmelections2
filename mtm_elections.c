@@ -10,10 +10,11 @@ MtmElectionsResult mtmElectionsAddCitizen(MtmElections mtmElections,
     if(!mtmElectionsIsLegal(citizenId,GENERAL_ID)||
     !mtmElectionsIsLegal(cityId,GENERAL_ID))
         return MTM_ELECTIONS_ILLEGAL_ID;
-    if(!mtmElectionsIsLegal(citizenAge,GENEREAL_AGE))
+    if(!mtmElectionsIsLegal(citizenAge,GENERAL_AGE))
         return MTM_ELECTIONS_ILLEGAL_AGE;
     if(!mtmElectionsIsLegal(yearsOfEducation,GENERAL_EDUCATION_YEARS))
         return MTM_ELECTIONS_ILLEGAL_NUMBER_OF_YEARS;
+
     switch(result){
         case SET_NULL_ARGUMENT:
             return CITIZEN_NULL_ARGUMENT;
