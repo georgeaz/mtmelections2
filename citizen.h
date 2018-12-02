@@ -33,11 +33,11 @@ typedef enum CitizenInformation_t{
 }CitizenInformation;
 
 Citizen CitizenCreate();
-
 void CitizenDestroy(Citizen );
 Citizen CitizenCopy(Citizen );
 bool CitizenCompere(Citizen ,Citizen );
-Information CitizenGetInformation(Citizen ,Information ,CitizenInformation );
+void CitizenRemovePreferences(Citizen);
+void CitizenGetInformation(Citizen ,Information ,CitizenInformation );
 
 
 #endif //HOMEWORK2ELECTIONS_CITIZEN_H
