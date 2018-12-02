@@ -25,14 +25,19 @@ typedef enum CitizenResult_t{
     CITIZEN_SUCCESS
 }CitizenResult;
 
+typedef enum CitizenInformation_t{
+  CITIZEN_ID,
+  CITIZEN_NAME,
+  CITIZEN_EDUCATION_YEARS,
+  CITIZEN_AGE
+}CitizenInformation;
 
 Citizen CitizenCreate();
 
 void CitizenDestroy(Citizen );
 Citizen CitizenCopy(Citizen );
 bool CitizenCompere(Citizen ,Citizen );
-Information CitizenGetInformation(Citizen );
-
+Information CitizenGetInformation(Citizen ,Information ,CitizenInformation );
 
 
 #endif //HOMEWORK2ELECTIONS_CITIZEN_H
