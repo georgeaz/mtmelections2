@@ -110,23 +110,17 @@ bool CityGetCitizen(City city,Candidate candidate,Citizen citizen){
 
 
 CandidateResult CityInsertCandidate(City city,Candidate candidate){
-    //we should check here in case of memory allocation error!!!the election funct doesnot expect that o.O
-   // if(CityIsLegal(city)!=CITY_SUCCESS || CandidateIsLegal(candidate)!=CANDIDATE_SUCCESS)
-    //    return CANDIDATE_NULL_ARGUMENT; /They dont return the same thing
-    //if you want to use the "SomethingIsLegal" thing. you only use it in their function
-    if(candidate==NULL)
-        return CANDIDATE_NULL_ARGUMENT;
     if(CandidateGetId(candidate)<0)
         return CANDIDATE_ILLEGAL_ID;
-    Citizen candidate_to_citizen;
+    Citizen candidate_to_citizen=NULL;
     if(!CityGetCitizen(city,candidate,candidate_to_citizen))
         return CANDIDATE_CITIZEN_DOSE_NOT_EXIST;
-    Age candidate_age;
+    Age candidate_age=NULL;
     CitizenGetInformation(candidate_to_citizen,candidate_age,CITIZEN_AGE);
-    if(candidate_age< CANDIDATE_MINMUM_AGE){
+    if(*candidate_age < CANDIDATE_MINIMUM_AGE){
         return CANDIDATE_AGE_NOT_APPROPRIATE;
     }
-    CitizenRemovePreferences(citizen);
+    CitizenCandidateToBeRemovePrefrences(candidate_to_citizen);
     SetResult add_candidate_result=setAdd(city->candidates,candidate);
     switch (add_candidate_result){
         case SET_NULL_ARGUMENT:
@@ -136,5 +130,11 @@ CandidateResult CityInsertCandidate(City city,Candidate candidate){
         case SET_ITEM_ALREADY_EXISTS:
             return CANDIDATE_ALREADY_EXISTS;
         default:return CANDIDATE_SUCCESS;
+    }
+}
+CandidateResult CityRemoveCandidate(City city,Candidate candidate){
+    SetResult remove_candidate_result=setRemove(city->candidates,candidate);
+    switch (remove_candidate_result){
+
     }
 }

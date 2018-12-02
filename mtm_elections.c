@@ -37,5 +37,6 @@ bool mtmElectionsIsLegal(int input,mtmElectionsGeneralInput type){
         default:return input>=0;
         case :break;
         case GENERAL_EDUCATION_YEARS:break;
+        //ymaaaaaaa shu b7b lina
     }
 }
