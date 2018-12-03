@@ -33,5 +33,6 @@ CitizenResult CityRemoveCitizen(City, Citizen);
 CandidateResult CityInsertCandidate(City, int);
 CandidateResult CityRemoveCandidate(City,Candidate);
 void CityChangeInformation(City,const String,int);
+CityResult  CitySupportCandidate()
 
 #endif //UNTITLED1_CITY_H

@@ -7,14 +7,14 @@
 #include "typedefs_and_general_functions.h"
 #include "stdbool.h"
 
-typedef struct Preference_t* Preference;
-bool PreferenceCompare(Preference,Preference);
-bool PreferenceIsEquals(Preference,Preference);
-Preference PreferenceCopy(Preference);
-void PreferenceDestroy(Preference);
-void PreferenceChangeInformation(Preference,int,int);
-Preference PreferenceCreate();
-int PreferenceGetId(Preference);
+typedef struct Preference_t* Vote;
+bool PreferenceCompare(Vote,Vote);
+bool PreferenceIsEquals(Vote,Vote);
+Vote PreferenceCopy(Vote);
+void PreferenceDestroy(Vote);
+void PreferenceChangeInformation(Vote,int,int);
+Vote PreferenceCreate();
+int PreferenceGetId(Vote);
 
 
 #endif //INC_3011_PREFERENCE_H

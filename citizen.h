@@ -37,7 +37,7 @@ Citizen CitizenCreate();
 void CitizenDestroy(Citizen );
 Citizen CitizenCopy(Citizen );
 void CitizenGetInformation(Citizen ,Information ,CitizenInformation );
-Preference CitizenFindPrefernce(Citizen,int);
+Vote CitizenFindPrefernce(Citizen,int);
 bool CitizenCompere(Citizen ,Citizen );
 void CitizenRemovePreferences(Citizen);
 int CitizenGetid(Citizen citizen);

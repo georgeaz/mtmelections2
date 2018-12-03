@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "City.h"
 
+
 struct City_t{
     Id id;
     Name name;
@@ -86,7 +87,6 @@ CitizenResult CityRemoveCitizen(City city, Citizen citizen){
        default:return CITIZEN_SUCCESS;
    }
 }
-int z;
 bool CityCompare(City old_city,City new_city){
     return old_city->id==new_city->id;
 }

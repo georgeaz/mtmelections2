@@ -16,7 +16,7 @@ typedef enum mtmElectionsGeneralInput_t{
 typedef struct  City_t* City;
 typedef struct Citizen_t * Citizen;
 typedef struct Candidate_t * Candidate;
-typedef struct  Preference_t *  Preference;
+typedef struct  Preference_t *  Vote;
 typedef int* Id;
 typedef int* Age;
 typedef char* String;

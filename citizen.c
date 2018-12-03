@@ -54,7 +54,7 @@ Citizen CitizenCopy(Citizen source_citizen){
         return NULL;
     }
     //we should check this!
-    new_citizen->name=StringCopy(*new_citizen->name);
+    *(new_citizen->name)=StringCopy(*(new_citizen->name));
     new_citizen->id=source_citizen->id;
     new_citizen->education_years=source_citizen->education_years;
     new_citizen->age=source_citizen->age;
@@ -66,9 +66,9 @@ Citizen CitizenCopy(Citizen source_citizen){
  * returns CITIZEN_ALREADY_SIPPORETED in case of the citizen is already supporting this candidate, otherwise, CITIZEN_SUCCESS
  */
 bool CitizenCandidateAlreadySupported(City city, Citizen citizen, int candidate_id, int priorty ) {
-    Preference citizen_preference=PreferenceCreate();
+    Vote citizen_preference=PreferenceCreate();
     PreferenceChangeInformation(citizen_preference,candidate_id,priorty);
-    Preference citizen_old_preference = CitizenFindPrefernce(citizen,candidate_id);
+    Vote citizen_old_preference = CitizenFindPrefernce(citizen,candidate_id);
     if(!citizen_old_preference)
         return false ;
     return true;
@@ -93,24 +93,25 @@ void CitizenGetInformation(Citizen citizen,Information information,CitizenInform
 void CitizenCandidateToBeRemovePrefrences(Citizen citizen){
     uniqueOrderedListClear(citizen->citizen_prefrences);
 }
-Preference CitizenFindPrefernce(Citizen citizen,int candidate_id) {
-    Preference preference = uniqueOrderedListGetLowest(citizen->citizen_prefrences);
+Vote CitizenFindPrefernce(Citizen citizen,int candidate_id) {
+    Vote preference = uniqueOrderedListGetLowest(citizen->citizen_prefrences);
     while (preference) {
         if (PreferenceGetId(preference) == candidate_id)
             return preference;
         preference = uniqueOrderedListGetNext(citizen->citizen_prefrences);
     }
+    return preference;
 }
 void CitizenRemovePrefrence(Citizen citizen, int candidate_id) {
-    Preference preference =CitizenFindPrefernce(citizen,candidate_id);
+    Vote preference =CitizenFindPrefernce(citizen,candidate_id);
     uniqueOrderedListRemove(citizen->citizen_prefrences, preference);
 }
-/*Preference CitizenGetPrefrence(Citizen citizen,int candidate_id)
+/*Vote CitizenGetPrefrence(Citizen citizen,int candidate_id)
 {lina 3m tjrb lmkledet bs wleshy kter w wow !!!!
  wow
  jd wow
 gogo wq7...
-    Preference preference=uniqueOrderedListGetLowest(citizen->citizen_prefrences);
+    Vote preference=uniqueOrderedListGetLowest(citizen->citizen_prefrences);
     while(preference) {
         if(PreferenceGetId(preference)==candidate_id){
         }
