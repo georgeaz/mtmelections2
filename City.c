@@ -120,23 +120,27 @@ bool CityIsCandidateACitizen(City city,int candidate_to_be_id){
  * all the validation, and just after that u create a Candidate object and insert
  * it.
 */
+Citizen CityGetCitizen(City city,int candidate_id){
+    Citizen citizen=setGetFirst(city->citizens);
+    while(CitizenGetid(citizen)!=candidate_id)
+        citizen=setGetNext(city->citizens);
+    return citizen;
+}
 
 CandidateResult CityInsertCandidate(City city, int candidate_id){
     if(city==NULL)return CANDIDATE_NULL_ARGUMENT;
     if(candidate_id<FIRST_LEGAL_ID)//we said that we are not using numbers
         return CANDIDATE_ILLEGAL_ID;
-    //Citizen candidate_to_be=NULL;
-    //we should have malloced him, u cant return a copy of somthing that u havent
-    //created yet!
-
     if(!CityIsCandidateACitizen(city,candidate_id))
         return CANDIDATE_CITIZEN_DOSE_NOT_EXIST;
-    Age candidate_age=NULL;
-    CitizenGetInformation()
-    if(*candidate_age < CANDIDATE_MINIMUM_AGE){
+    Citizen candidate_to_be=CityGetCitizen(city,candidate_id);
+    Age candidate_to_be_age=NULL;
+    CitizenGetInformation(candidate_to_be,candidate_to_be_age,CITIZEN_AGE);
+    if(*candidate_to_be_age < CANDIDATE_MINIMUM_AGE)
         return CANDIDATE_AGE_NOT_APPROPRIATE;
-    }
-    CitizenCandidateToBeRemovePrefrences(candidate_to_citizen);
+    CitizenCandidateToBeRemovePrefrences(candidate_to_be);
+    Candidate candidate=CandidateCreate();
+    CandidateChangeId(candidate,candidate_id);
     SetResult add_candidate_result=setAdd(city->candidates,candidate);
     switch (add_candidate_result){
         case SET_NULL_ARGUMENT:
@@ -150,7 +154,7 @@ CandidateResult CityInsertCandidate(City city, int candidate_id){
 }
 CandidateResult CityRemoveCandidate(City city,Candidate candidate){
     SetResult remove_candidate_result=setRemove(city->candidates,candidate);
-    switch (remove_candidate_result){
+    //switch (remove_candidate_result){
 
     }
-}
+//we assume here that the candidate is already a citizen!

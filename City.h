@@ -27,10 +27,10 @@ City CityCreate();
 City CityCopy(City);
 bool CityCompare(City ,City );
 bool CityIsLegal(City );
+Citizen CityGetCitizen(City ,int );
 CitizenResult CityInsertCitizen(City, Citizen);
 CitizenResult CityRemoveCitizen(City, Citizen);
 CandidateResult CityInsertCandidate(City,Candidate);
 CandidateResult CityRemoveCandidate(City,Candidate);
-bool CityGetCitizen(City,Candidate,Citizen);
 
 #endif //UNTITLED1_CITY_H

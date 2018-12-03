@@ -35,9 +35,9 @@ typedef enum CitizenInformation_t{
 Citizen CitizenCreate();
 void CitizenDestroy(Citizen );
 Citizen CitizenCopy(Citizen );
+void CitizenGetInformation(Citizen ,Information ,CitizenInformation );
 bool CitizenCompere(Citizen ,Citizen );
 void CitizenRemovePreferences(Citizen);
-void CitizenGetInformation(Citizen ,Information ,CitizenInformation );
 int CitizenGetid(Citizen citizen);
 void CitizenRemovePrefrence(Citizen , Id const );
 void CitizenCandidateToBeRemovePrefrences(Citizen );

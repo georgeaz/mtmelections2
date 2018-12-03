@@ -91,17 +91,10 @@ int CitizenGetid(Citizen citizen){
     return *(citizen->id);
 }
 //maybe no:
-Citizen CitizenGetCopy(Citizen citizen){
-    Citizen citizen_copy=CitizenCreate();
-    if(citizen_copy==NULL)return NULL;
-    CitizenCopy(citizen);
-    //  citizen_copy->name=StringCopy(citizenName);
 
-    // *(citizen_copy->id)=citizenId;
-    // *(citizen_copy->education_years)=yearsOfEducation;
-    //   *(citizen_copy->age)=citizenAge;
-    //for now its null. well see if well use it somewhere...
-    //  citizen_copy->citizen_prefrences=NULL;
-
-
+void CitizenChangeInformation(Citizen citizen,int id,const String name,int education_years,int age){
+    *(citizen->id)=id;
+    *(citizen->name)=StringCopy(name);
+    *(citizen->age)=age;
+    *(citizen->education_years)=education_years;
 }
