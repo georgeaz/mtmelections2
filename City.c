@@ -95,6 +95,7 @@ bool CityIsLegal(City city){
    // if(city==NULL)
      //   return CITY_NULL_ARGUMENT; you dont have to return null since u already checked that
 }
+
 bool CityGetCitizen(City city,Candidate candidate,Citizen citizen){
     if(!(setIsIn(city->candidates,candidate)))
         return false;
