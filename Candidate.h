@@ -20,13 +20,12 @@ typedef enum CandidateResult_t{
   CANDIDATE_AGE_NOT_APPROPRIATE
 }CandidateResult;
 
-
+int CandidateGetId(Candidate candidate);
 void CandidateChangeId(Candidate,int);
 Candidate CandidateCreate();
 void CandidateDestroy(Candidate);
 Candidate CandidateCopy(Candidate );
-bool CandidateCompere(Candidate ,Candidate );
-int CandidateGetId(Candidate candidate){
+bool CandidateCompere(Candidate ,Candidate);
 
 
 #endif //INC_3011_CANDIDATE_H

@@ -3,6 +3,7 @@
 //
 #include "citizen.h"
 #include "uniqueOrderedList/uniqueOrderedList.h"
+#include "preference.h"
 #include <stdlib.h>
 //we should include this in general functions
 struct Citizen_t{
@@ -19,7 +20,7 @@ Citizen CitizenCreate(){
     Age age=(Age)malloc(sizeof(*age));
     Id id=(Id)malloc(sizeof(*id));
     EducationYears education_years=(EducationYears)malloc(sizeof(*education_years));
-    UniqueOrderedList citizen_prefrences=uniqueOrderedListCreate(main,main,main,main);
+    UniqueOrderedList citizen_prefrences=uniqueOrderedListCreate(PreferenceCopy,PreferenceDestroy,PreferenceIsEquals,PreferenceCompare);
     if(citizen==NULL||age==NULL||id==NULL||education_years==NULL||citizen_prefrences==NULL){
         free(citizen);
         free(age);

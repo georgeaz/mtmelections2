@@ -24,9 +24,12 @@ Preference PreferenceCreate() {
 }
 void PreferenceDestroy(Preference preference){
     if(preference==NULL)return;
-    free(preference->preference_score);
     free(preference->candidate_id);
     free(preference);
+}
+void PreferenceChangeInformation(Preference preference,int candidate_id,int preference_score){
+    *(preference->candidate_id)=candidate_id;
+    *(preference->preference_score)=preference_score;
 }
 Preference PreferenceCopy(Preference source_prefernce){
     if(source_prefernce==NULL)return NULL;
