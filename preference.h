@@ -8,7 +8,7 @@
 #include "stdbool.h"
 
 typedef struct Preference_t* Preference;
-bool PreferenceComper(Preference,Preference);
+bool PreferenceCompare(Preference,Preference);
 bool PreferenceIsEquals(Preference,Preference);
 Preference PreferenceCopy(Preference);
 void PreferenceDestroy(Preference);
