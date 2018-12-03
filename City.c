@@ -33,7 +33,7 @@ City CityCreate(){
     // if(name==NULL || city==NULL || id==NULL) What happens to the other two arguments?they are not freed
     //    return NULL;
     City city=(City)malloc(sizeof(*city));
-    Set citizens=setCreate((copySetElements)CitizenCopy,CitizenDestroy,CitizenCompere);
+    Set citizens=setCreate((copySetElements)CitizenCopy,(freeSetElements)CitizenDestroy,(compareSetElements)CitizenCompere);
     Id id=(Id)malloc(sizeof(*id));
     if(city==NULL||citizens==NULL||id==NULL){
         free(city);

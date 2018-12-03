@@ -17,7 +17,7 @@ add_executable(3011
         citizen.h
         City.c
         City.h
-        CMakeLists.txt
+
         list.h
         main.c
         mtm_elections.h
