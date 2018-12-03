@@ -43,6 +43,6 @@ void CitizenRemovePreferences(Citizen);
 int CitizenGetid(Citizen citizen);
 void CitizenRemovePrefrence(Citizen,int);
 void CitizenCandidateToBeRemovePrefrences(Citizen );
-bool CitizenCandidateAlreadySupported(City,Citizen,int,int);
-
+bool CitizenCandidateAlreadySupported(City,Citizen,int candidate_id,int priority);
+bool CitizenSupportCandidate(Citizen,int candidate_id,int priority);
 #endif //HOMEWORK2ELECTIONS_CITIZEN_H

@@ -7,7 +7,7 @@
 #include "typedefs_and_general_functions.h"
 #include "stdbool.h"
 
-typedef struct Preference_t* Vote;
+
 bool PreferenceCompare(Vote,Vote);
 bool PreferenceIsEquals(Vote,Vote);
 Vote PreferenceCopy(Vote);

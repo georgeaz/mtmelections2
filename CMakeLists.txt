@@ -15,13 +15,13 @@ add_executable(3011
         uniqueOrderedList/uniqueOrderedList.h
         citizen.c
         citizen.h
-        City.h
-        City.c
         list.h
         main.c
         mtm_elections.h
         mtm_print.c
         mtm_print.h
+        City.h
+        City.c
         typedefs_and_general_functions.c
         typedefs_and_general_functions.h preference.c preference.h Candidate.h Candidate.c)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wall -pedantic-errors -Werror")

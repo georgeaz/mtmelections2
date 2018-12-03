@@ -17,6 +17,7 @@ struct City_t{
     Set candidates;
 };
 
+
 Id CityGetId(City city){
     return city->id;
 }
@@ -91,7 +92,7 @@ bool CityCompare(City old_city,City new_city){
     return old_city->id==new_city->id;
 }
 bool CityIsLegal(City city){
-    return (city->id>=0);
+    return (*(city->id)>=FIRST_CITY_LEGAL_ID);
    // if(city==NULL)
      //   return CITY_NULL_ARGUMENT; you dont have to return null since u already checked that
 }
@@ -131,7 +132,7 @@ Citizen CityGetCitizen(City city,int citizen_id){
 }
 CandidateResult CityInsertCandidate(City city, int candidate_id){
     if(city==NULL)return CANDIDATE_NULL_ARGUMENT;
-    if(candidate_id<FIRST_LEGAL_ID)//we said that we are not using numbers
+    if(candidate_id<FIRST_CITIZEN_LEGAL_ID)//we said that we are not using numbers
         return CANDIDATE_ILLEGAL_ID;
     if(!CityIsCandidateACitizen(city,candidate_id))
         return CANDIDATE_CITIZEN_DOSE_NOT_EXIST;
@@ -160,8 +161,30 @@ void CityChangeInformation(City city,const String name,int id){
     *(city->id)=id;
 }
 CandidateResult CityRemoveCandidate(City city,Candidate candidate){
-    SetResult remove_candidate_result=setRemove(city->candidates,candidate);
+  //  SetResult remove_candidate_result=setRemove(city->candidates,candidate);
     //switch (remove_candidate_result){
-
+    return CANDIDATE_NULL_ARGUMENT;
     }
 //we assume here that the candidate is already a citizen!
+CityResult  CitySupportCandidate(City city,Citizen citizen,int candidate_id,int priority) {
+    Citizen candidate = CityGetCitizen(city, candidate_id);
+    if (candidate == NULL)
+        return CITY_NOT_THE_SAME_CITY;
+    if (CitizenCandidateAlreadySupported(city, citizen, candidate_id, priority))
+        return CITY_CANDIDATE_ALREADY_SUPPORTED;
+    if (CityIsCandidate(city,candidate_id))
+        return CITY_CITIZEN_CAN_NOT_SUPPORT;
+    if(!(CitizenSupportCandidate(citizen,candidate_id,priority)))
+        return CITY_CITIZEN_PRIORITY_EXISTS;
+    return CITY_SUCCESS;
+}
+
+
+
+bool CityIsCandidate(City city,int candidate_id){
+    Candidate candidate=CandidateCreate();
+    CandidateChangeId(candidate,candidate_id);
+    if(setIsIn(city->candidates,candidate))
+        return true;
+    return false;
+}

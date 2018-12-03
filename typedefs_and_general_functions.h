@@ -26,7 +26,8 @@ typedef int* EducationYears;
 typedef int Priority;
 #define CANDIDATE_MINIMUM_AGE 21
 #define VOTER_MINIMUM_AGE 17
-#define FIRST_LEGAL_ID 0
+#define FIRST_CITIZEN_LEGAL_ID 0
+#define FIRST_CITY_LEGAL_ID 0
 
 
 String StringCopy(String);

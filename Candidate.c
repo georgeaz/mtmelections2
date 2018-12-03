@@ -24,7 +24,7 @@ void CandidateDestroy(Candidate candidate){
     free(candidate);
 }
 void CandidateChangeId(Candidate candidate,int id){
-    *candidate->id=id;
+    *(candidate->id)=id;
 }
 Candidate CandidateCopy(Candidate source_candidate){
     Candidate new_candidate=(Candidate)malloc(sizeof(*new_candidate));
