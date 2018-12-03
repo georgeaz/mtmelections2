@@ -15,6 +15,7 @@ struct City_t{
     Set citizens;
     Set candidates;
 };
+int x;
 Id CityGetId(City city){
     return city->id;
 }
