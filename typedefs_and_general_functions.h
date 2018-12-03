@@ -5,6 +5,7 @@
 #ifndef UNTITLED1_TYPEDEFS_H
 #define UNTITLED1_TYPEDEFS_H
 #include <stddef.h>
+#include <stdlib.h>
 
 typedef enum mtmElectionsGeneralInput_t{
     GENERAL_ID,
@@ -25,6 +26,7 @@ typedef int* EducationYears;
 typedef int Priority;
 #define CANDIDATE_MINIMUM_AGE 21
 #define VOTER_MINIMUM_AGE 17
+#define FIRST_LEGAL_ID 0
 
 
 String StringCopy(String);

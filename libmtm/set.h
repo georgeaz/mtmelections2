@@ -75,7 +75,6 @@ typedef int(*compareSetElements)(SetElement, SetElement);
 * 	A new Set in case of success.
 */
 Set setCreate(copySetElements copyElement, freeSetElements freeElement, compareSetElements compareElements);
-Set setCreate(copySetElements copyElement, freeSetElements freeElement, compareSetElements compareElements);
 
 /**
 * setCopy: Creates a copy of target set.

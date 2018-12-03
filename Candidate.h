@@ -25,7 +25,7 @@ Candidate CandidateCreate();
 void CandidateDestroy(Candidate);
 Candidate CandidateCopy(Candidate );
 bool CandidateCompere(Candidate ,Candidate );
-Id CandidateGetId(Candidate );
+int CandidateGetId(Candidate candidate){
 
 
 #endif //INC_3011_CANDIDATE_H

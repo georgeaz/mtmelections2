@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "typedefs_and_general_functions.h"
 //check when u pass agruments that they are not pointers
+
+//the Name shit should be a char*
 String StringCopy(const String source_string){
     String new_copy=(String)malloc(sizeof(String*)*Stringlength(source_string));
     if(new_copy==NULL){
@@ -24,4 +26,7 @@ size_t Stringlength(const String  string)
     for (ptr = string; *ptr; ++ptr)
         ;
     return (ptr - string);
+}
+void StringCopyDestroy(String string){
+    free(string);
 }

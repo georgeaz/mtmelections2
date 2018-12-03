@@ -14,7 +14,6 @@ MtmElectionsResult mtmElectionsAddCitizen(MtmElections mtmElections,
         return MTM_ELECTIONS_ILLEGAL_AGE;
     if(!mtmElectionsIsLegal(yearsOfEducation,GENERAL_EDUCATION_YEARS))
         return MTM_ELECTIONS_ILLEGAL_NUMBER_OF_YEARS;
-
     switch(result){
         case SET_NULL_ARGUMENT:
             return CITIZEN_NULL_ARGUMENT;
@@ -26,7 +25,6 @@ MtmElectionsResult mtmElectionsAddCitizen(MtmElections mtmElections,
             return CITIZEN_SUCCESS;
         default:return CITIZEN_SUCCESS;
     }
-
 
 }
 bool mtmElectionsIsLegal(int input,mtmElectionsGeneralInput type){
