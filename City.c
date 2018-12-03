@@ -50,12 +50,11 @@ City CityCopy(City source_city){
     if(source_city==NULL)
         return NULL;
     City new_city= CityCreate();
-    String name_copy=malloc(sizeof(Name)*Stringlength(*source_city->name));
-    if(new_city==NULL||name_copy==NULL){
+    if(new_city==NULL){
         CityDestroy(new_city);
         return NULL;
     }
-    new_city->name=StringCopy(*new_city->name);
+    *(new_city->name)=StringCopy(*(source_city->name));
     new_city->citizens=source_city->citizens;
     new_city->id=source_city->id;
         return new_city;

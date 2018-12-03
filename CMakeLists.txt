@@ -15,6 +15,7 @@ add_executable(3011
         uniqueOrderedList/uniqueOrderedList.h
         citizen.c
         citizen.h
+        City.c
         City.h
         CMakeLists.txt
         list.h
