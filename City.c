@@ -15,6 +15,7 @@ struct City_t{
     Set citizens;
     Set candidates;
 };
+
 Id CityGetId(City city){
     return city->id;
 }
@@ -83,8 +84,7 @@ CitizenResult CityRemoveCitizen(City city, Citizen citizen){
          return CITIZEN_DOES_NOT_EXIST;
        case SET_SUCCESS:
            return CITIZEN_SUCCESS;
-       default:
-           return CITIZEN_SUCCESS;
+       default:return CITIZEN_SUCCESS;
    }
 }
 bool CityCompare(City old_city,City new_city){
@@ -95,29 +95,43 @@ bool CityIsLegal(City city){
    // if(city==NULL)
      //   return CITY_NULL_ARGUMENT; you dont have to return null since u already checked that
 }
-bool CityGetCitizen(City city,Candidate candidate,Citizen citizen){
-    if(!(setIsIn(city->candidates,candidate)))
-        return false;
-    citizen=setGetFirst(city->citizens);
-    Id id=NULL;
-    do{
-        CitizenGetInformation(citizen,id,CITIZEN_ID);
-        if(id==CandidateGetId(candidate)){
-            return true;
-        }
-        citizen=setGetNext(city->citizens);
-    }while (setGetNext(city->citizens));
+//why u write GET when u get a bool?!
+bool CityIsCandidateACitizen(City city,int candidate_to_be_id){
+
+   // if(!(setIsIn(city->candidates,candidate)))
+      //  return false;
+      //if u return false here this means the candidate is not a citizen//so the error well send to the mtmelections well be false :(
+      Citizen citizen=setGetFirst(city->citizens);
+      while (citizen)
+      {
+          int citizen_id=CitizenGetid(citizen);
+          if(citizen_id==candidate_to_be_id)return true;
+          citizen=setGetNext(city->citizens);
+      }
+    return false;
+
+    //return false were added!
 }
+/*MtmElectionsResult mtmElectionsAddCandidate(MtmElections mtmElections,
+ * int candidateId, int cityId);
+ * The above functions takes an int
+ * City is above candidate, so it gets the int candidateId first, thus u do
+ * all the validation, and just after that u create a Candidate object and insert
+ * it.
+*/
 
-
-CandidateResult CityInsertCandidate(City city,Candidate candidate){
-    if(CandidateGetId(candidate)<0)
+CandidateResult CityInsertCandidate(City city, int candidate_id){
+    if(city==NULL)return CANDIDATE_NULL_ARGUMENT;
+    if(candidate_id<FIRST_LEGAL_ID)//we said that we are not using numbers
         return CANDIDATE_ILLEGAL_ID;
-    Citizen candidate_to_citizen=NULL;
-    if(!CityGetCitizen(city,candidate,candidate_to_citizen))
+    //Citizen candidate_to_be=NULL;
+    //we should have malloced him, u cant return a copy of somthing that u havent
+    //created yet!
+
+    if(!CityIsCandidateACitizen(city,candidate_id))
         return CANDIDATE_CITIZEN_DOSE_NOT_EXIST;
     Age candidate_age=NULL;
-    CitizenGetInformation(candidate_to_citizen,candidate_age,CITIZEN_AGE);
+    CitizenGetInformation()
     if(*candidate_age < CANDIDATE_MINIMUM_AGE){
         return CANDIDATE_AGE_NOT_APPROPRIATE;
     }
@@ -130,23 +144,12 @@ CandidateResult CityInsertCandidate(City city,Candidate candidate){
             return CANDIDATE_MEMORY_ERROR;
         case SET_ITEM_ALREADY_EXISTS:
             return CANDIDATE_ALREADY_EXISTS;
-        default:
-            return CANDIDATE_SUCCESS;
+        default:return CANDIDATE_SUCCESS;
     }
 }
 CandidateResult CityRemoveCandidate(City city,Candidate candidate){
-    Citizen  citizen=setGetFirst(city->citizens);
-    do{
-        CitizenRemovePrefrence(citizen,CandidateGetId(candidate));
-        citizen=setGetNext(city->citizens);
-    }while (setGetNext(city->citizens));
     SetResult remove_candidate_result=setRemove(city->candidates,candidate);
     switch (remove_candidate_result){
-        case SET_NULL_ARGUMENT:
-            return CANDIDATE_NULL_ARGUMENT;
-        case SET_ITEM_DOES_NOT_EXIST:
-            return CANDIDATE_DOES_NOT_EXIST;
-        default:
-            return CANDIDATE_SUCCESS;
+
     }
 }
