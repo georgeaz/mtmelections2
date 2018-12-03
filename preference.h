@@ -12,6 +12,7 @@ bool PreferenceCompare(Preference,Preference);
 bool PreferenceIsEquals(Preference,Preference);
 Preference PreferenceCopy(Preference);
 void PreferenceDestroy(Preference);
+void PreferenceChangeInformation(Preference,int,int);
 Preference PreferenceCreate();
 
 #endif //INC_3011_PREFERENCE_H
