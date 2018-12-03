@@ -15,10 +15,8 @@ add_executable(3011
         uniqueOrderedList/uniqueOrderedList.h
         citizen.c
         citizen.h
-        City.c
         City.h
         CMakeLists.txt
-        exampleMain.c
         list.h
         main.c
         mtm_elections.h
