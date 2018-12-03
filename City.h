@@ -30,7 +30,7 @@ bool CityIsLegal(City );
 Citizen CityGetCitizen(City ,int );
 CitizenResult CityInsertCitizen(City, Citizen);
 CitizenResult CityRemoveCitizen(City, Citizen);
-CandidateResult CityInsertCandidate(City,Candidate);
+CandidateResult CityInsertCandidate(City, int);
 CandidateResult CityRemoveCandidate(City,Candidate);
 void CityChangeInformation(City,const String,int);
 

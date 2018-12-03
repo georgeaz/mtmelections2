@@ -120,13 +120,16 @@ bool CityIsCandidateACitizen(City city,int candidate_to_be_id){
  * all the validation, and just after that u create a Candidate object and insert
  * it.
 */
-Citizen CityGetCitizen(City city,int candidate_id){
+/* CityGetCitizen:
+ * if the candidate does not belong to the city that we are searching in
+ * the function will return NULL.
+ */
+Citizen CityGetCitizen(City city,int citizen_id){
     Citizen citizen=setGetFirst(city->citizens);
-    while(CitizenGetid(citizen)!=candidate_id)
+    while(CitizenGetid(citizen)!=citizen_id)
         citizen=setGetNext(city->citizens);
     return citizen;
 }
-
 CandidateResult CityInsertCandidate(City city, int candidate_id){
     if(city==NULL)return CANDIDATE_NULL_ARGUMENT;
     if(candidate_id<FIRST_LEGAL_ID)//we said that we are not using numbers

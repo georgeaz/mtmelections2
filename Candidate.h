@@ -25,7 +25,7 @@ void CandidateChangeId(Candidate,int);
 Candidate CandidateCreate();
 void CandidateDestroy(Candidate);
 Candidate CandidateCopy(Candidate );
-bool CandidateCompere(Candidate ,Candidate);
+bool CandidateCompare(Candidate ,Candidate);
 
 
 #endif //INC_3011_CANDIDATE_H

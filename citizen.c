@@ -62,9 +62,18 @@ Citizen CitizenCopy(Citizen source_citizen){
     //new_citizen->citizen_prefrences=source_citizen->citizen_prefrences;
     return new_citizen;
 }
-CitizenResult CitizenInsertPrefrence(City city, Citizen citizen,Id candidate,Priority priorty ) {
+/*
+ * returns CITIZEN_ALREADY_SIPPORETED in case of the citizen is already supporting this candidate, otherwise, CITIZEN_SUCCESS
+ */
+bool CitizenCandidateAlreadySupported(City city, Citizen citizen, int candidate_id, int priorty ) {
+    Preference citizen_preference=PreferenceCreate();
+    PreferenceChangeInformation(citizen_preference,candidate_id,priorty);
+    Preference citizen_old_preference = CitizenFindPrefernce(citizen,candidate_id);
+    if(!citizen_old_preference)
+        return false ;
+    return true;
+   // UniqueOrderedList result=uniqueOrderedListInsert(citizen->citizen_prefrences,citizen_preference);
 
-    UniqueOrderedList result=uniqueOrderedListInsert(citizen->citizen_prefrences,);
     //switch(result
 
 }
@@ -84,15 +93,17 @@ void CitizenGetInformation(Citizen citizen,Information information,CitizenInform
 void CitizenCandidateToBeRemovePrefrences(Citizen citizen){
     uniqueOrderedListClear(citizen->citizen_prefrences);
 }
-void CitizenRemovePrefrence(Citizen citizen, int candidate_id) {
+Preference CitizenFindPrefernce(Citizen citizen,int candidate_id) {
     Preference preference = uniqueOrderedListGetLowest(citizen->citizen_prefrences);
     while (preference) {
-        if (PreferenceGetId(preference) == candidate_id) {
-            uniqueOrderedListRemove(citizen->citizen_prefrences, preference);
-            return;;
-        }
+        if (PreferenceGetId(preference) == candidate_id)
+            return preference;
         preference = uniqueOrderedListGetNext(citizen->citizen_prefrences);
     }
+}
+void CitizenRemovePrefrence(Citizen citizen, int candidate_id) {
+    Preference preference =CitizenFindPrefernce(citizen,candidate_id);
+    uniqueOrderedListRemove(citizen->citizen_prefrences, preference);
 }
 /*Preference CitizenGetPrefrence(Citizen citizen,int candidate_id)
 {lina 3m tjrb lmkledet bs wleshy kter w wow !!!!
