@@ -83,10 +83,27 @@ void CitizenGetInformation(Citizen citizen,Information information,CitizenInform
 void CitizenCandidateToBeRemovePrefrences(Citizen citizen){
     uniqueOrderedListClear(citizen->citizen_prefrences);
 }
-void CitizenRemovePrefrence(Citizen citizen, const Id const candidate_id){
-
-
+void CitizenRemovePrefrence(Citizen citizen, int candidate_id) {
+    Preference preference = uniqueOrderedListGetLowest(citizen->citizen_prefrences);
+    while (preference) {
+        if (PreferenceGetId(preference) == candidate_id) {
+            uniqueOrderedListRemove(citizen->citizen_prefrences, preference);
+            return;;
+        }
+        preference = uniqueOrderedListGetNext(citizen->citizen_prefrences);
+    }
 }
+/*Preference CitizenGetPrefrence(Citizen citizen,int candidate_id)
+{lina 3m tjrb lmkledet bs wleshy kter w wow !!!!
+ wow
+ jd wow
+gogo wq7...
+    Preference preference=uniqueOrderedListGetLowest(citizen->citizen_prefrences);
+    while(preference) {
+        if(PreferenceGetId(preference)==candidate_id){
+        }
+    }
+}*/
 int CitizenGetid(Citizen citizen){
     return *(citizen->id);
 }

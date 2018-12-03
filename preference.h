@@ -14,5 +14,5 @@ Preference PreferenceCopy(Preference);
 void PreferenceDestroy(Preference);
 void PreferenceChangeInformation(Preference,int,int);
 Preference PreferenceCreate();
-
+int PreferenceGetId(Preference);
 #endif //INC_3011_PREFERENCE_H
