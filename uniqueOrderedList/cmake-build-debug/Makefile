@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\George\Desktop\2511\cmake-build-debug\CMakeFiles C:\Users\George\Desktop\2511\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\CLionProjects\3011\cmake-build-debug\CMakeFiles C:\Users\User\CLionProjects\3011\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\George\Desktop\2511\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\CLionProjects\3011\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
