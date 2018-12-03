@@ -152,6 +152,11 @@ CandidateResult CityInsertCandidate(City city, int candidate_id){
         default:return CANDIDATE_SUCCESS;
     }
 }
+
+void CityChangeInformation(City city,const String name,int id){
+    *(city->name)=StringCopy(name);
+    *(city->id)=id;
+}
 CandidateResult CityRemoveCandidate(City city,Candidate candidate){
     SetResult remove_candidate_result=setRemove(city->candidates,candidate);
     //switch (remove_candidate_result){
