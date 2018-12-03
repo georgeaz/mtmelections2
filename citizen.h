@@ -41,5 +41,5 @@ void CitizenGetInformation(Citizen ,Information ,CitizenInformation );
 int CitizenGetid(Citizen citizen);
 void CitizenRemovePrefrence(Citizen , Id const );
 void CitizenCandidateToBeRemovePrefrences(Citizen );
-
+Citizen CitizenGetCopy(Citizen );
 #endif //HOMEWORK2ELECTIONS_CITIZEN_H

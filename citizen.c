@@ -57,7 +57,8 @@ Citizen CitizenCopy(Citizen source_citizen){
     new_citizen->id=source_citizen->id;
     new_citizen->education_years=source_citizen->education_years;
     new_citizen->age=source_citizen->age;
-    new_citizen->citizen_prefrences=source_citizen->citizen_prefrences;
+    //u should make a unique ordered list that return a copy
+    //new_citizen->citizen_prefrences=source_citizen->citizen_prefrences;
     return new_citizen;
 }
 CitizenResult CitizenInsertPrefrence(City city, Citizen citizen,Id candidate,Priority priorty ) {
@@ -88,17 +89,18 @@ void CitizenRemovePrefrence(Citizen citizen, const Id const candidate_id){
 int CitizenGetid(Citizen citizen){
     return *(citizen->id);
 }
-Citizen CitizenGetCopy(const char* citizenName,int citizenId, int citizenAge,
-        int yearsOfEducation){
+//maybe no:
+Citizen CitizenGetCopy(Citizen citizen){
     Citizen citizen_copy=CitizenCreate();
     if(citizen_copy==NULL)return NULL;
-    citizen_copy->name=StringCopy(citizenName);
+    CitizenCopy(citizen);
+    //  citizen_copy->name=StringCopy(citizenName);
 
-    *(citizen_copy->id)=citizenId;
-    *(citizen_copy->education_years)=yearsOfEducation;
-    *(citizen_copy->age)=citizenAge;
+   // *(citizen_copy->id)=citizenId;
+   // *(citizen_copy->education_years)=yearsOfEducation;
+ //   *(citizen_copy->age)=citizenAge;
     //for now its null. well see if well use it somewhere...
-    citizen_copy->citizen_prefrences=NULL;
+  //  citizen_copy->citizen_prefrences=NULL;
 
 
 }

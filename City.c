@@ -100,12 +100,15 @@ bool CityIsCandidateACitizen(City city,int candidate_to_be_id){
    // if(!(setIsIn(city->candidates,candidate)))
       //  return false;
       //if u return false here this means the candidate is not a citizen//so the error well send to the mtmelections well be false :(
-      Citizen citizen=
-      int* citizen_id=(int*)malloc(sizeof(int));
+      Citizen citizen=CitizenCreate();
+      citizen=CitizenCopy(setGetFirst(city->citizens));
+      while (citizen)
+      {
+          int citizen_id=CitizenGetid(citizen);
+          if(citizen_id==candidate_to_be_id)return true;
 
-    do{
+      }
 
-    }while();
     *citizen_id=CitizenGetid(setGetFirst(city->citizens));
 
 
