@@ -63,6 +63,7 @@ Citizen CitizenCopy(Citizen source_citizen){
     return new_citizen;
 }
 CitizenResult CitizenInsertPrefrence(City city, Citizen citizen,Id candidate,Priority priorty ) {
+
     UniqueOrderedList result=uniqueOrderedListInsert(citizen->citizen_prefrences,);
     //switch(result
 

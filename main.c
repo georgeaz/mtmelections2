@@ -7,14 +7,7 @@
 void freeInt(void* e){
     free(e);
 }
-void* copyInt(void* e){
-    int* newInt = malloc(sizeof(*newInt));
-    if(!newInt){
-        return NULL;
-    }
-    *newInt = *((int*)e);
-    return newInt;
-}
+
 int main() {
     int x=6;
     int arr[] = {3,2,1,-4,1,2};
